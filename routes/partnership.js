@@ -9,6 +9,7 @@ router.get("/", async (req, res) => {
   try {
     const partnership = await Partnership.find();
     res.send(partnership);
+    console.log("good to go")
   } catch (error) {
     res.json({message: error})
   };
