@@ -1,0 +1,30 @@
+.background-height{
+    min-height: 600px;
+}
+.player{
+    display: flex;
+    flex-direction: row;
+    padding-top: 30px;
+    box-direction:left ;
+}
+.flex-right{
+    padding-left: 200px;
+}
+.top{
+    padding: 10%;
+    font-size: 1.1rem;
+}
+.left{
+    text-align: left;
+    }
+.p{
+    padding-top: 5%;
+    padding-left: 30%;
+}
+.mar{
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+.high{
+    min-height: 300px;
+}
