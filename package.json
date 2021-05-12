@@ -4,9 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "cd gasup2 && run build",
-    "install-gasup2": "cd gasup2 && run npm install",
-    "heroku-postbuild": "npm run install-gasup2 && npm run build",
     "start": "nodemon app.js"
   },
   "author": "",

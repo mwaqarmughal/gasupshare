@@ -34,14 +34,6 @@ mongoose
     console.log("connected to database");
   });
 
-
-
-  if (process.env.NODE_ENV==='production'){
-    app.use(express.static('gasup2/build'))
-  }
-  app.get("*", (req,res)=>{
-    res.sendFile(path.resolve(__dirname,"./gasup2", "build", "app.js"))
-  })
 //How do we start listening
 app.listen(PORT);
 
