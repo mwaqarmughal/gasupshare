@@ -12,7 +12,7 @@ const postRoutes =require('./routes/posts')
 const userRoutes = require('./routes/users')
 const complaintsRoutes = require("./routes/complaints");
 const partnershipRoutes = require("./routes/partnership");
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 4000;
 //ROUTES//
 app.get("/", (req, res) => {
   res.send("we are on home");
