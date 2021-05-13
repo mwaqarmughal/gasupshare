@@ -1,8 +1,12 @@
 {
   "name": "gasupserver",
-  "version": "1.0.0",
+  "version": "0.0.0",
+  "private":"true",
   "description": "",
   "main": "index.js",
+  "engines": {
+    "node": "15.1.0"
+  },
   "scripts": {
     "start": "nodemon app.js"
   },
