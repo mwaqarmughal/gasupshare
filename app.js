@@ -14,9 +14,9 @@ const complaintsRoutes = require("./routes/complaints");
 const partnershipRoutes = require("./routes/partnership");
 const PORT = process.env.PORT || 4000;
 //ROUTES//
-// app.get("/", (req, res) => {
-//     res.send("we are on home");
-//   });
+app.get("/", (req, res) => {
+    res.send("we are on home");
+  });
 //Middleware
 app.use('/users',userRoutes)
 app.use('/complaints',complaintsRoutes)
