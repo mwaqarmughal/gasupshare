@@ -22,7 +22,10 @@ router.post('/', async (req,res)=>{
     qty: req.body.qty,
     phone: req.body.phone,
     enquiry: req.body.enquiry,
-    fuelStation: req.body.fuelStation
+    CNIC: req.body.CNIC,
+    address: req.body.address,
+    company: req.body.company,
+    pumpCity: req.body.pumpCity,
   });
 try {
    const savedPartnership = await partnership.save();
