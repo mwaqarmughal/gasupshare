@@ -8,6 +8,14 @@ const complaintsSchema = mongoose.Schema({
     required: [true, "can't be blank"],
     match: [/\S+@\S+\.\S+/, "is invalid"],
   },
+  category:{
+    type: String,
+    required: [true, "can't be blank"],
+  },
+  name:{
+    type: String,
+    required: [true, "can't be blank"],
+  },
 
   complaints: {
     type: String,

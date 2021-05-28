@@ -16,11 +16,14 @@ router.get("/", async (req, res) => {
 router.post('/', async (req,res)=>{
   const complaints = new Complaints({
     email: req.body.email,
+    category: req.body.category,
+    name: req.body.name,
     complaints: req.body.complaints,
   });
 try {
    const savedComplaints = await complaints.save();
   res.json(savedComplaints);
+  console.log(savedComplaints)
 } catch (error) {
   res.json({message: error})
 }

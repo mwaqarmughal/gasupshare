@@ -3,7 +3,6 @@ const router = express.Router();
 const Partnership = require('../models/Partnership')
 
 
-
 //GET
 router.get("/", async (req, res) => {
   try {
@@ -28,8 +27,9 @@ router.post('/', async (req,res)=>{
     pumpCity: req.body.pumpCity,
   });
 try {
-   const savedPartnership = await partnership.save();
+  const savedPartnership = await partnership.save();
   res.json(savedPartnership);
+  console.log(savedPartnership)
 } catch (error) {
   res.json({message: error})
 }
