@@ -1,7 +1,7 @@
 {
   "name": "gasupserver",
   "version": "0.0.0",
-  "private":"true",
+  "private": "true",
   "description": "",
   "main": "index.js",
   "engines": {
