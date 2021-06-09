@@ -4,7 +4,7 @@ const complaintsSchema = mongoose.Schema({
   email: {
     type: String,
     lowercase: true,
-    unique: false,
+    unique: true,
     required: [true, "can't be blank"],
     match: [/\S+@\S+\.\S+/, "is invalid"],
   },

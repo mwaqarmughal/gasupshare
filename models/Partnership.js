@@ -39,7 +39,7 @@ const partnershipSchema = mongoose.Schema({
   },
   accepted: {
     type: Boolean,
-    default: false,
+    default: false
   },
 });
 

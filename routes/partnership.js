@@ -22,14 +22,16 @@ router.get("/Real", async (req, res) => {
 });
 
 //POST
-router.post("/update", async (req, res) => {
+router.post('/update', async (req,res)=>{
   var myquery = { _id: req.body.id };
-  var newvalues = { $set: { accepted: req.body.accepted } };
-  Partnership.updateOne(myquery, newvalues, (err, response) => {
+  var newvalues = { $set: {accepted: req.body.accepted } };
+  Partnership.updateOne(myquery,newvalues, (err,response)=>{
     res.json(response);
   });
 });
 
+
+//POST
 router.post('/', async (req,res)=>{
   const partnership = new Partnership({
     email: req.body.email,
@@ -40,12 +42,12 @@ router.post('/', async (req,res)=>{
     address: req.body.address,
     company: req.body.company,
     pumpCity: req.body.pumpCity,
-    accepted: false,
+    accepted: false
   });
 try {
   const savedPartnership = await partnership.save();
   res.json(savedPartnership);
-  // console.log(savedPartnership)
+  console.log(savedPartnership)
 } catch (error) {
   res.json({message: error})
 }
