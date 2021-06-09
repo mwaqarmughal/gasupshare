@@ -23,7 +23,7 @@ router.post('/', async (req,res)=>{
 try {
    const savedComplaints = await complaints.save();
   res.json(savedComplaints);
-  console.log(savedComplaints)
+  // console.log(savedComplaints)
 } catch (error) {
   res.json({message: error})
 }

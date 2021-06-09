@@ -37,6 +37,10 @@ const partnershipSchema = mongoose.Schema({
     type: String,
     required: [true, "Can't be blank"],
   },
+  accepted: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 module.exports=mongoose.model('Partnership', partnershipSchema)

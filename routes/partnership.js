@@ -6,15 +6,30 @@ const Partnership = require('../models/Partnership')
 //GET
 router.get("/", async (req, res) => {
   try {
-    const partnership = await Partnership.find();
+    const partnership = await Partnership.find({accepted: false});
+    res.send(partnership);
+  } catch (error) {
+    res.json({message: error})
+  };
+});
+router.get("/Real", async (req, res) => {
+  try {
+    const partnership = await Partnership.find({accepted: true});
     res.send(partnership);
   } catch (error) {
     res.json({message: error})
   };
 });
 
-
 //POST
+router.post("/update", async (req, res) => {
+  var myquery = { _id: req.body.id };
+  var newvalues = { $set: { accepted: req.body.accepted } };
+  Partnership.updateOne(myquery, newvalues, (err, response) => {
+    res.json(response);
+  });
+});
+
 router.post('/', async (req,res)=>{
   const partnership = new Partnership({
     email: req.body.email,
@@ -25,11 +40,12 @@ router.post('/', async (req,res)=>{
     address: req.body.address,
     company: req.body.company,
     pumpCity: req.body.pumpCity,
+    accepted: false,
   });
 try {
   const savedPartnership = await partnership.save();
   res.json(savedPartnership);
-  console.log(savedPartnership)
+  // console.log(savedPartnership)
 } catch (error) {
   res.json({message: error})
 }
